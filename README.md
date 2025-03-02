@@ -35,7 +35,7 @@
    - max_radius：检测圆形的最大半径
    - output_circle_size：输出圆形的大小
 
-![工作流示意](workflow\circle_pattern2svg.png)
+![工作流示意](workflow/circle_pattern2svg.png)
 ## 参数说明
 
 ### CirclePatternProcessor节点
