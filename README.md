@@ -15,8 +15,7 @@
 1. 将此仓库克隆到ComfyUI的`custom_nodes`目录下：
    ```bash
    cd custom_nodes
-   git clone [repository_url] circle_pattern_processor
-   ```
+   git clone https://github.com/mr7thing/circle_pattern_processor
 
 2. 安装依赖：
    ```bash
@@ -27,7 +26,7 @@
 ## 使用方法
 
 1. 启动ComfyUI
-2. 在节点选择菜单中找到"Circle Pattern Processor"和"Circle Pattern SVG Exporter"
+2. 在节点选择菜单中image/pattern找到"Circle Pattern Processor"和"Circle Pattern SVG Exporter"
 3. 将节点添加到工作流中
 4. 连接输入图像
 5. 调整参数：
@@ -84,7 +83,7 @@
 
 - image (必需)
   - 输入图像，用于获取画布尺寸
-  
+
 ## 许可证
 
 MIT License
