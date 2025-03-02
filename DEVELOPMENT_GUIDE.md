@@ -284,7 +284,17 @@ Pillow>=8.0.0
 ### 9.3 Git操作规范
 
 1. Commit信息规范：
-   - 使用引号包裹commit信息：git commit -m "feat: 添加新功能"
+   - **必须使用引号包裹commit信息**，这是强制要求：
+     ```bash
+     # 正确示例
+     git commit -m "feat: 添加新功能"
+     git commit -m "fix: 修复图像处理bug"
+     
+     # 错误示例
+     git commit -m feat: 添加新功能    # 没有使用引号
+     git commit -m 'fix: 修复bug'      # 使用了单引号
+     ```
+   
    - 采用统一的commit前缀：
      * feat: 新功能
      * fix: 修复bug
