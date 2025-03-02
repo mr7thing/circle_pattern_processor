@@ -1,0 +1,378 @@
+{
+  "last_node_id": 12,
+  "last_link_id": 20,
+  "nodes": [
+    {
+      "id": 6,
+      "type": "Canny",
+      "pos": [
+        -128.041259765625,
+        374.9301452636719
+      ],
+      "size": [
+        297.12274169921875,
+        86.76725769042969
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "label": "image",
+          "type": "IMAGE",
+          "link": 6
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "label": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Canny"
+      },
+      "widgets_values": [
+        0.4,
+        0.99
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        -505.5196228027344,
+        601.1429443359375
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "label": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6,
+            8
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "label": "MASK",
+          "type": "MASK",
+          "links": null,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "1111.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ImageBinarizer",
+      "pos": [
+        -150.49581909179688,
+        599.5230102539062
+      ],
+      "size": [
+        315,
+        58
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "label": "image",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "label": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBinarizer"
+      },
+      "widgets_values": [
+        127
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CirclePatternProcessor",
+      "pos": [
+        210.95285034179688,
+        599.2092895507812
+      ],
+      "size": [
+        306.9411315917969,
+        396.93267822265625
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "label": "image",
+          "type": "IMAGE",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "label": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            15,
+            20
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CIRCLES",
+          "label": "CIRCLES",
+          "type": "TUPLE",
+          "links": [
+            14
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CirclePatternProcessor"
+      },
+      "widgets_values": [
+        5,
+        25,
+        10,
+        57,
+        11,
+        27,
+        "use_average"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "CirclePatternSVGExporter",
+      "pos": [
+        573.403076171875,
+        598.42041015625
+      ],
+      "size": [
+        340.20001220703125,
+        178
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "circles",
+          "label": "circles",
+          "type": "TUPLE",
+          "link": 14
+        },
+        {
+          "name": "image",
+          "label": "image",
+          "type": "IMAGE",
+          "link": 15
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "label": "STRING",
+          "type": "STRING",
+          "links": [
+            16
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CirclePatternSVGExporter"
+      },
+      "widgets_values": [
+        "butfly",
+        6
+      ]
+    },
+    {
+      "id": 12,
+      "type": "SaveImage",
+      "pos": [
+        981.9999389648438,
+        382.4613037109375
+      ],
+      "size": [
+        315,
+        270
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "label": "images",
+          "type": "IMAGE",
+          "link": 20
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "easy showAnything",
+      "pos": [
+        992.0852661132812,
+        762.4283447265625
+      ],
+      "size": [
+        330.0859069824219,
+        209.20452880859375
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "label": "anything",
+          "type": "*",
+          "shape": 7,
+          "link": 16
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "label": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "easy showAnything"
+      },
+      "widgets_values": [
+        "SVG文件已保存至: D:\\StabilityMatrix-win-x64\\Data\\Packages\\ComfyUI\\output\\svg\\butfly0005.svg"
+      ]
+    }
+  ],
+  "links": [
+    [
+      6,
+      2,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      8,
+      2,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      11,
+      5,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      4,
+      1,
+      10,
+      0,
+      "TUPLE"
+    ],
+    [
+      15,
+      4,
+      0,
+      10,
+      1,
+      "IMAGE"
+    ],
+    [
+      16,
+      10,
+      0,
+      11,
+      0,
+      "*"
+    ],
+    [
+      20,
+      4,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.167184107045002,
+      "offset": {
+        "0": 180.3602294921875,
+        "1": -431.8326416015625
+      }
+    },
+    "node_versions": {
+      "comfy-core": "0.3.18",
+      "circle_pattern_processor": "169da644ad30aaeafbf2a088f0961c63721d438c",
+      "ComfyUI-Easy-Use": "aadbb0b38945eba3e15be6099a7f4e5c0327c175"
+    },
+    "ue_links": [],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}

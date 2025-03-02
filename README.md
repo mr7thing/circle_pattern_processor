@@ -36,13 +36,10 @@
    - max_radius：检测圆形的最大半径
    - output_circle_size：输出圆形的大小
 
+![工作流示意](workflow\circle_pattern2svg.png)
 ## 参数说明
 
 ### CirclePatternProcessor节点
-
-- preprocessing_threshold (默认: 127)
-  - 范围: 0-255
-  - 用于图像二值化的阈值
 
 - min_radius (默认: 5)
   - 范围: 1-100
@@ -56,26 +53,38 @@
   - 范围: 1-50
   - 输出图像中圆形的标准大小
 
+- edge_detection_sensitivity (默认: 50)
+  - 范围: 1-100
+  - 边缘检测的灵敏度，值越大检测越精确
+
+- circle_accumulator_threshold (默认: 30)
+  - 范围: 1-100
+  - 圆形检测的累加器阈值，值越小检测到的圆形越多
+
+- min_center_dist (默认: 10)
+  - 范围: 1-100
+  - 圆心之间的最小距离，用于合并相近的圆形
+
+- merge_mode (选项: ["keep_first", "use_average"])
+  - 默认: "keep_first"
+  - 圆形合并模式：保留第一个或使用平均值
+
 ### CirclePatternSVGExporter节点
 
-- output_size (默认: 512)
-  - 范围: 64-2048
-  - 输出SVG画布的大小
+- filename (默认: "pattern.svg")
+  - 输出SVG文件的文件名
+  - 支持子目录路径
 
-- circle_radius (默认: 10)
-  - 范围: 1-100
-  - SVG中圆形的半径
+- output_circle_size (默认: 10)
+  - 范围: 1-50
+  - SVG中圆形的标准大小
 
-- stroke_width (默认: 2)
-  - 范围: 0-10
-  - SVG中圆形边框的宽度
+- circles (必需)
+  - 圆形数据元组，包含圆心坐标
 
-- stroke_color (默认: "#000000")
-  - SVG中圆形边框的颜色
-
-- fill_color (默认: "none")
-  - SVG中圆形的填充颜色
-
+- image (必需)
+  - 输入图像，用于获取画布尺寸
+  
 ## 许可证
 
 MIT License
