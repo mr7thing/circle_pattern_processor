@@ -1,0 +1,15 @@
+[project]
+name = "circle_pattern_processor"
+description = "This is a custom node for ComfyUI that can detect circular patterns in an image and generate a standardized circular output."
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["numpy", "opencv-python", "Pillow"]
+
+[project.urls]
+Repository = "https://github.com/mr7thing/circle_pattern_processor"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "circle_pattern_processor"
+Icon = ""
